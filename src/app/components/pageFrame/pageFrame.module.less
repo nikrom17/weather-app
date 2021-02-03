@@ -1,0 +1,39 @@
+@import "~antd/dist/antd.less";
+@import "../../../styles/colors.less";
+
+.cityImage {
+  background-image: url("/DallasTX.png");
+  background-size: auto;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  min-height: 60vh;
+}
+
+.frame {
+  margin: 50px;
+  height: 100vh;
+}
+
+.locationInfo {
+  text-align: center;
+  width: 100%;
+  color: #fff;
+}
+
+// .temperatureToggle {
+//   align-items: end;
+// }
+
+.fiveDayForecast {
+  display: flex;
+  text-align: center;
+  // justify-content: space-between;
+  background-color: #fff;
+}
+
+.fiveDayForecast:last-child {
+  border-right: none;
+}
