@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 auth0-config.js
 apiKey.ts
+
+# Local Netlify folder
+.netlify
