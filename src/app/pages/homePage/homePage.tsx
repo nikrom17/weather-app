@@ -1,8 +1,8 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import { AppState } from "src/redux/rootReducer";
-import LocationInfo from "@components/LocationInfo/locationInfo";
-import TemperatureToggle from "@components/temperatureToggle/temperatureToggle";
+import LocationInfo from "@components/LocationInfo/LocationInfo";
+import TemperatureToggle from "@components/TemperatureToggle/TemperatureToggle";
 import CurrentForecast from "@components/CurrentForecast/CurrentForecast";
 import * as forecastTypes from "src/redux/types/forecastTypes";
 import * as forecastActions from "src/redux/actions/forecastActions";
@@ -37,7 +37,9 @@ const PageHeader: React.FC<Props> = ({
         <LocationInfo location={location} />
       </div>
       <div className={styles.cityImage}>
-        <div><CurrentForecast current={current} tempScaleF={tempScaleF}/></div>
+        <div>
+          <CurrentForecast current={current} tempScaleF={tempScaleF}/>
+        </div>
         <div className={styles.temperatureToggle}>
           <TemperatureToggle />
         </div>

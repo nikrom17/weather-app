@@ -1,30 +1,33 @@
-@import "~antd/dist/antd.less";
 @import "../../../styles/colors.less";
 
 .cityImage {
-  background-image: url("/DallasTX.png");
-  background-size: auto;
-  background-position: center;
-  overflow: hidden;
+  background-image: url("/dallas.svg");
+  background-position: bottom;
+  // background-size: auto;
+  background-size: 100%;
+  background-repeat: no-repeat;
   display: flex;
-  width: 100%;
+  flex: 1;
   justify-content: space-between;
-  min-height: 60vh;
+  overflow: hidden;
+  width: 100%;
 }
 
 .frame {
-  margin: 50px;
-  height: 100vh;
+  margin: 5% 20% 8% 20%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .locationInfo {
   text-align: center;
   width: 100%;
-  color: #fff;
+  color: @white;
 }
 
 .fiveDayForecast {
   display: flex;
   text-align: center;
-  background-color: #fff;
+  background-color: @white;
 }

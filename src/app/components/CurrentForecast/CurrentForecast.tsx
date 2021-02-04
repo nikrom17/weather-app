@@ -17,7 +17,7 @@ const CurrentForecast: React.FC<Props> = ({ current, tempScaleF }) => {
         {Math.round(temp)}&deg;
       </div>
       <div className={styles.icon}>
-        <img src={condition.icon} alt={condition.text} />
+        <img src={condition.icon.replaceAll("64", "128")} alt={condition.text} />
       </div>
       <div className={styles.forecastDescription}>
         <span>{condition.text}</span>

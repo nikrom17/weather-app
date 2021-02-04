@@ -23,7 +23,7 @@ const DailyForecast: React.FC<Props> = ({ future, tempScaleF }) => {
             <div>
               <div className={styles.day}>{day.toLocaleDateString("en-US", { weekday: "short"})}</div>
               <div className={styles.icon}>
-                <img src={condition.icon} alt={condition.text}/>
+                <img src={condition.icon.replaceAll("64", "128")} alt={condition.text} height="64" />
               </div>
               <div className={styles.temp} >{Math.round(temp)}&deg;</div>
             </div>

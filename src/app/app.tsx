@@ -1,6 +1,6 @@
 import * as React from "react";
 import HomePage from '@pages/HomePage/HomePage';
-import "./app.less";
+import "./App.less";
 
 const App: React.FC = () => {
   return (

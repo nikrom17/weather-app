@@ -3,9 +3,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { AppState } from "src/redux/rootReducer";
 import * as forecastActions from "src/redux/actions/forecastActions";
-// import * as forecastTypes from "src/redux/types/forecastTypes"; //todo maybe use this
 import { Switch } from "antd";
-import './temperatureToggle.less';
+import './TemperatureToggle.less';
 
 interface StateProps {
   tempScaleF: boolean;
