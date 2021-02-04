@@ -6,7 +6,6 @@ interface Props {
   current: forecastTypes.CurrentForecast;
   tempScaleF: boolean;
 }
-//todo can I move redux further up?
 
 const CurrentForecast: React.FC<Props> = ({ current, tempScaleF }) => {
   const { temp_c, temp_f, condition, wind_mph } = current;
@@ -17,7 +16,7 @@ const CurrentForecast: React.FC<Props> = ({ current, tempScaleF }) => {
       <div className={styles.temp}>
         {Math.round(temp)}&deg;
       </div>
-      <div className={styles.weatherIcon}>
+      <div className={styles.icon}>
         <img src={condition.icon} alt={condition.text} />
       </div>
       <div className={styles.forecastDescription}>

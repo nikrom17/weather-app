@@ -15,16 +15,20 @@ const DailyForecast: React.FC<Props> = ({ future, tempScaleF }) => {
       {!isEmpty(future.byId) && future.allIds.map(id => {
         const {date, day: { avgtemp_c, avgtemp_f, condition } } = future.byId[id];
         const temp = tempScaleF ? avgtemp_f : avgtemp_c;
+        const day = new Date(date);
+
         return (
           <>
           <div className={styles.card}>
             <div>
-              <p>{date}</p>
-              <div><img src={condition.icon} alt={condition.text}/></div>
-              <div>{temp}&deg;</div>
+              <div className={styles.day}>{day.toLocaleDateString("en-US", { weekday: "short"})}</div>
+              <div className={styles.icon}>
+                <img src={condition.icon} alt={condition.text}/>
+              </div>
+              <div className={styles.temp} >{Math.round(temp)}&deg;</div>
             </div>
           </div>
-          {id !== 4 && <Divider type="vertical" style={{height: "auto",}}/>}
+          {id !== 4 && <Divider type="vertical" style={{height: "auto", borderLeft: "2px solid #D8D8D8", top: "0" }} />}
           </>
         )})
       }

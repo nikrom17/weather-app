@@ -1,4 +1,3 @@
-const darkTheme = require('antd/dist/dark-theme');
 const defaultTheme = require('antd/dist/default-theme');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const path = require('path');
@@ -22,7 +21,6 @@ module.exports = override(
       modifyVars: { 
         'hack': `true;@import "${require.resolve('antd/lib/style/color/colorPalette.less')}";`, //add antd less variables
         ...defaultTheme,
-        // ...darkTheme,
       },
       localIdentName: "[path][name]__[local]--[hash:base64:5]", //  enables CSS Modules
     }),
