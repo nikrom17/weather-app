@@ -10,6 +10,21 @@
   font-weight: 600;
 }
 
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .icon {
   padding-bottom: 0.55rem;
+}
+
+@media screen and (max-width: 600px) {
+  .cityContainer {
+    justify-content: flex-start;
+  }
+
+  .locationContainer {
+    text-align: left;
+  }
 }

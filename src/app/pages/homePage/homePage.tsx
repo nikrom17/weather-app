@@ -38,13 +38,16 @@ const PageHeader: React.FC<Props> = ({
     <div className={styles.frame}>
       <div className={styles.locationInfo}>
         <LocationInfo location={location} />
+        {width < 600 && <TemperatureToggle />}
       </div>
       <div className={styles.imageContainer}>
         <div className={styles.cityImage}>
           <CurrentForecast current={current} tempScaleF={tempScaleF} />
-          <TemperatureToggle />
+          {width > 600 && <TemperatureToggle />}
         </div>
-        {<img src="/dallas.svg" alt="Dallas" width="100%" height="auto" />}
+        {height > 900 && (
+          <img src="/dallas.svg" alt="Dallas" width="100%" height="auto" />
+        )}
       </div>
       <div className={styles.fiveDayForecast}>
         <DailyForecast

@@ -45,3 +45,44 @@
     margin: auto;
   }
 }
+
+@media screen and (max-height: 900px) {
+  .card {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  .cardContents {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-content: baseline;
+  }
+
+  .icon {
+    margin: auto;
+  }
+
+  .day {
+    margin: auto;
+  }
+
+  .temp {
+    margin: auto;
+  }
+}
+
+@media screen and (max-height: 540px) and (max-width: 720px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    padding: 2rem 0;
+  }
+  .cardContents {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    align-content: baseline;
+  }
+}

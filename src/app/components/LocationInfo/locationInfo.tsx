@@ -11,7 +11,7 @@ const LocationInfo: React.FC<Props> = ({ location }) => {
   const date = new Date(location.localtime);
 
   return (
-    <>
+    <div className={styles.locationContainer}>
       <div className={styles.cityContainer}>
         <img
           className={styles.icon}
@@ -31,7 +31,7 @@ const LocationInfo: React.FC<Props> = ({ location }) => {
           day: 'numeric',
         })}
       </p>
-    </>
+    </div>
   );
 };
 
