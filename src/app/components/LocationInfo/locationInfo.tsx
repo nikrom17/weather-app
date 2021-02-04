@@ -19,9 +19,9 @@ const LocationInfo: React.FC<Props> = ({ location }) => {
           alt="location pin"
           height="30"
         />
-        <span
-          className={styles.city}
-        >{`${location.name}, ${location.region}`}</span>
+        <span className={styles.city}>
+          {`${location.name}, ${location.region}`}
+        </span>
       </div>
       <p>
         {date.toLocaleDateString('en-US', {

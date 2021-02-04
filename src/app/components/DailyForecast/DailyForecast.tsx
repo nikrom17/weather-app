@@ -48,9 +48,7 @@ const DailyForecast: React.FC<Props> = ({
               {id !== 4 && (
                 <Divider
                   type={
-                    width > 850 || (height <= 540 && width <= 720)
-                      ? 'vertical'
-                      : 'horizontal'
+                    width > 850 || height <= 670 ? 'vertical' : 'horizontal'
                   }
                   style={{
                     height: 'auto',

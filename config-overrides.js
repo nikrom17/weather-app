@@ -24,7 +24,7 @@ module.exports = override(
       )}";`, //add antd less variables
       ...defaultTheme,
     },
-    localIdentName: '[path][name]__[local]--[hash:base64:5]', //  enables CSS Modules
+    localIdentName: '[local]--[hash:base64:5]', //  enables CSS Modules
   }),
   // import alias
   addWebpackAlias({
