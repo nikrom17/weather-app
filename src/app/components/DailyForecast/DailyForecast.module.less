@@ -1,7 +1,8 @@
-@import "../../../styles/colors.less";
+@import '../../../styles/colors.less';
 
 .card {
   display: flex;
+  flex-direction: row;
   margin: auto;
   padding: 2rem 0;
 }
@@ -18,4 +19,29 @@
 .temp {
   color: @gray;
   font-size: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .card {
+    margin: 0;
+    padding: 0.5rem 0;
+  }
+  .cardContents {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-content: baseline;
+  }
+
+  .icon {
+    margin: auto;
+  }
+
+  .day {
+    margin: auto;
+  }
+
+  .temp {
+    margin: auto;
+  }
 }

@@ -8,6 +8,7 @@ import * as forecastTypes from 'src/redux/types/forecastTypes';
 import * as forecastActions from 'src/redux/actions/forecastActions';
 import * as styles from './HomePage.module.less';
 import DailyForecast from '@components/DailyForecast/DailyForecast';
+import useWindowDimensions from 'src/app/hooks/useWindowDimensions';
 
 interface StateProps {
   current: forecastTypes.CurrentForecast;
@@ -27,6 +28,8 @@ const PageHeader: React.FC<Props> = ({
   location,
   tempScaleF,
 }) => {
+  const { height, width } = useWindowDimensions();
+
   React.useEffect(() => {
     fetchForecast('Houston');
   }, [fetchForecast]);
@@ -41,10 +44,15 @@ const PageHeader: React.FC<Props> = ({
           <CurrentForecast current={current} tempScaleF={tempScaleF} />
           <TemperatureToggle />
         </div>
-        <img src="/dallas.svg" alt="Dallas" width="100%" />
+        {<img src="/dallas.svg" alt="Dallas" width="100%" height="auto" />}
       </div>
       <div className={styles.fiveDayForecast}>
-        <DailyForecast future={future} tempScaleF={tempScaleF} />
+        <DailyForecast
+          future={future}
+          tempScaleF={tempScaleF}
+          height={height}
+          width={width}
+        />
       </div>
     </div>
   );

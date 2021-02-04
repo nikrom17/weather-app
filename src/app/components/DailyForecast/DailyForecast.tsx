@@ -7,9 +7,16 @@ import { Divider } from 'antd';
 interface Props {
   future: forecastTypes.FutureForecast;
   tempScaleF: boolean;
+  height: number;
+  width: number;
 }
 
-const DailyForecast: React.FC<Props> = ({ future, tempScaleF }) => {
+const DailyForecast: React.FC<Props> = ({
+  future,
+  tempScaleF,
+  height,
+  width,
+}) => {
   return (
     <>
       {!isEmpty(future.byId) &&
@@ -22,9 +29,9 @@ const DailyForecast: React.FC<Props> = ({ future, tempScaleF }) => {
           const day = new Date(date);
 
           return (
-            <>
+            <React.Fragment key={id}>
               <div className={styles.card}>
-                <div>
+                <div className={styles.cardContents}>
                   <div className={styles.day}>
                     {day.toLocaleDateString('en-US', { weekday: 'short' })}
                   </div>
@@ -40,15 +47,17 @@ const DailyForecast: React.FC<Props> = ({ future, tempScaleF }) => {
               </div>
               {id !== 4 && (
                 <Divider
-                  type="vertical"
+                  type={width > 850 ? 'vertical' : 'horizontal'}
                   style={{
                     height: 'auto',
                     borderLeft: '2px solid #D8D8D8',
-                    top: '0',
+                    borderBottom: '2px solid #D8D8D8',
+                    top: 0,
+                    margin: 0,
                   }}
                 />
               )}
-            </>
+            </React.Fragment>
           );
         })}
     </>
