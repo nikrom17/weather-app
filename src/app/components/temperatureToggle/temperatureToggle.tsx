@@ -19,11 +19,11 @@ const TemperatureToggle: React.FC<Props> = ({
 }) => (
   <div className="toggleContainer">
     <Switch
-      className="ant-switch"
       checked={tempScaleF}
       checkedChildren={<span>F&deg;</span>}
-      unCheckedChildren={<span>C&deg;</span>}
+      className="ant-switch"
       onClick={toggleTempScale}
+      unCheckedChildren={<span>C&deg;</span>}
     />
   </div>
 );

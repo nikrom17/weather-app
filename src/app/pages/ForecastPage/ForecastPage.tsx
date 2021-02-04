@@ -30,17 +30,17 @@ const ForeCastPage: React.FC<Props> = ({
 }) => {
   return (
     <div className={styles.frame}>
-      <div className={styles.locationInfo}>
+      <div className={styles.header}>
         <LocationInfo location={location} />
         {screenWidth <= 600 && <TemperatureToggle />}
       </div>
-      <div className={styles.imageContainer}>
-        <div className={styles.cityImage}>
+      <div className={styles.currentForecastContainer}>
+        <div className={styles.currentForecast}>
           <CurrentForecast current={current} tempScaleF={tempScaleF} />
           {screenWidth > 600 && <TemperatureToggle />}
         </div>
         {screenHeight > 900 && (
-          <img src="/dallas.svg" alt="Dallas" width="100%" height="auto" />
+          <img src="/dallas.svg" alt="Dallas" height="auto" width="100%" />
         )}
       </div>
       <div className={styles.fiveDayForecast}>

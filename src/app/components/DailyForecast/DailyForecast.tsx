@@ -6,15 +6,15 @@ import { Divider } from 'antd';
 
 interface Props {
   future: forecastTypes.FutureForecast;
-  tempScaleF: boolean;
   height: number;
+  tempScaleF: boolean;
   width: number;
 }
 
 const DailyForecast: React.FC<Props> = ({
   future,
-  tempScaleF,
   height,
+  tempScaleF,
   width,
 }) => {
   return (

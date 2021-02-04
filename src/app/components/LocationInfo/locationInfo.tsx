@@ -14,10 +14,10 @@ const LocationInfo: React.FC<Props> = ({ location }) => {
     <div className={styles.locationContainer}>
       <div className={styles.cityContainer}>
         <img
-          className={styles.icon}
-          src={locationPin}
           alt="location pin"
+          className={styles.icon}
           height="30"
+          src={locationPin}
         />
         <span className={styles.city}>
           {`${location.name}, ${location.region}`}
@@ -25,10 +25,10 @@ const LocationInfo: React.FC<Props> = ({ location }) => {
       </div>
       <p>
         {date.toLocaleDateString('en-US', {
+          day: 'numeric',
+          month: 'short',
           weekday: 'long',
           year: 'numeric',
-          month: 'short',
-          day: 'numeric',
         })}
       </p>
     </div>

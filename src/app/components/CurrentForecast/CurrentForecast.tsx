@@ -11,7 +11,7 @@ const CurrentForecast: React.FC<Props> = ({ current, tempScaleF }) => {
   const { temp_c, temp_f, condition, wind_mph } = current;
   const temp = tempScaleF ? temp_f : temp_c;
 
-  return current.condition ? (
+  return (
     <div className={styles.currentForecast}>
       <div className={styles.temp}>{Math.round(temp)}&deg;</div>
       <div className={styles.icon}>
@@ -26,7 +26,7 @@ const CurrentForecast: React.FC<Props> = ({ current, tempScaleF }) => {
         <span>{Math.round(wind_mph)} mph</span>
       </div>
     </div>
-  ) : null;
+  );
 };
 
 export default CurrentForecast;
