@@ -1,16 +1,16 @@
-import { ThunkType, DefaultSchema } from "./commonTypes";
+import { ThunkType, DefaultSchema } from './commonTypes';
 
 // ------ COMMON INTERFACES ------ //
 interface Condition {
-    text: string;
-    icon: string;
+  text: string;
+  icon: string;
 }
 
 export interface CurrentForecast {
   last_updated: string;
   temp_c: number;
   temp_f: number;
-  condition: Condition
+  condition: Condition;
   wind_mph: number;
 }
 
@@ -20,7 +20,7 @@ interface FutureForecastObject {
     avgtemp_c: number;
     avgtemp_f: number;
     condition: Condition;
-  }
+  };
 }
 
 export interface FutureForecast extends DefaultSchema<FutureForecastObject> {}
@@ -43,11 +43,11 @@ export interface ForecastState {
 export type FetchForecast = (city: string) => ThunkType;
 
 // ------ CONSTANTS ------ //
-export const FETCH_FORECAST_START = "FETCH_FORECAST_START";
-export const FETCH_FORECAST_SUCCESS = "FETCH_FORECAST_SUCCESS";
-export const FETCH_FORECAST_FAILED = "FETCH_FORECAST_FAILED";
+export const FETCH_FORECAST_START = 'FETCH_FORECAST_START';
+export const FETCH_FORECAST_SUCCESS = 'FETCH_FORECAST_SUCCESS';
+export const FETCH_FORECAST_FAILED = 'FETCH_FORECAST_FAILED';
 
-export const TOGGLE_TEMP_SCALE = "TOGGLE_TEMP_SCALE";
+export const TOGGLE_TEMP_SCALE = 'TOGGLE_TEMP_SCALE';
 
 // ------ TYPES ------ //
 interface FetchForecastSuccess {
@@ -59,4 +59,4 @@ interface ToggleTempScale {
   type: typeof TOGGLE_TEMP_SCALE;
 }
 
-export type Types = FetchForecastSuccess | ToggleTempScale
+export type Types = FetchForecastSuccess | ToggleTempScale;

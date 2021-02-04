@@ -1,5 +1,5 @@
-import * as forecastTypes from "../types/forecastTypes";
-import api from "src/api/api";
+import * as forecastTypes from '../types/forecastTypes';
+import api from 'src/api/api';
 
 // ------ SIMPLE ACTIONS ------ //
 
@@ -25,9 +25,9 @@ export const toggleTempScale = () => ({
 // ------ COMPLEX ACTIONS ------ //
 
 // fetch a 5 day forecast
-export const fetchForecast: forecastTypes.FetchForecast = (city: string) => async (
-  dispatch
-) => {
+export const fetchForecast: forecastTypes.FetchForecast = (
+  city: string
+) => async (dispatch) => {
   try {
     dispatch(fetchForecastStart());
     const response = await api.getForecast(city);
@@ -37,4 +37,3 @@ export const fetchForecast: forecastTypes.FetchForecast = (city: string) => asyn
     dispatch(fetchForecastFailed());
   }
 };
-

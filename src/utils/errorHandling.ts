@@ -1,14 +1,13 @@
-import { notification } from "antd";
+import { notification } from 'antd';
 
 export const toastError = (description: number, message: string) =>
-  notification["error"]({
+  notification['error']({
     description,
     message,
   });
 
 export const handelError = (response: any) => {
   const { code, message } = response;
-  console.log(response)
   switch (code) {
     case 404:
       toastError(code, message);

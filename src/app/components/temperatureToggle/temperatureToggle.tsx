@@ -1,9 +1,8 @@
-
-import React from "react";
-import { connect } from "react-redux";
-import { AppState } from "src/redux/rootReducer";
-import * as forecastActions from "src/redux/actions/forecastActions";
-import { Switch } from "antd";
+import React from 'react';
+import { connect } from 'react-redux';
+import { AppState } from 'src/redux/rootReducer';
+import * as forecastActions from 'src/redux/actions/forecastActions';
+import { Switch } from 'antd';
 import './TemperatureToggle.less';
 
 interface StateProps {
@@ -11,16 +10,19 @@ interface StateProps {
 }
 
 interface Props extends StateProps {
-  toggleTempScale(): void; 
+  toggleTempScale(): void;
 }
 
-const TemperatureToggle: React.FC<Props> = ({ tempScaleF, toggleTempScale }) => (
+const TemperatureToggle: React.FC<Props> = ({
+  tempScaleF,
+  toggleTempScale,
+}) => (
   <div className="toggleContainer">
-    <Switch 
-      className="ant-switch" 
-      checked={tempScaleF} 
-      checkedChildren={<span>F&deg;</span>} 
-      unCheckedChildren={<span>C&deg;</span>} 
+    <Switch
+      className="ant-switch"
+      checked={tempScaleF}
+      checkedChildren={<span>F&deg;</span>}
+      unCheckedChildren={<span>C&deg;</span>}
       onClick={toggleTempScale}
     />
   </div>
@@ -29,7 +31,6 @@ const TemperatureToggle: React.FC<Props> = ({ tempScaleF, toggleTempScale }) => 
 const mapStateToProps = (state: AppState): StateProps => ({
   tempScaleF: state.forecast.tempScaleF,
 });
-
 
 const mapDispatchToProps = (dispatch: any) => ({
   toggleTempScale: () => dispatch(forecastActions.toggleTempScale()),
