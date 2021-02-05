@@ -2,24 +2,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const loadingContainer = {
-  width: '50%',
-  height: '50%',
-  display: 'flex',
-  margin: '0 auto',
   alignContent: 'center',
+  display: 'flex',
+  height: '50%',
   justifyContent: 'space-around',
+  margin: '0 auto',
   overflow: 'hidden',
-};
-
-const weatherIconBase = {
-  display: 'block',
-  width: '100%',
-  height: '100%',
-  backgroundRepeat: 'no-repeat',
+  width: '50%',
 };
 
 const weatherIconSun = {
-  ...weatherIconBase,
+  backgroundRepeat: 'no-repeat',
+  display: 'block',
+  height: '100%',
+  width: '100%',
   backgroundImage: 'url("/sun.svg")',
 };
 
@@ -47,8 +43,8 @@ const loadingCircleVariants = {
 
 const loadingCircleTransition = {
   duration: 1.25,
-  yoyo: Infinity,
   ease: 'easeInOut',
+  yoyo: Infinity,
 };
 
 const LoadingPage: React.FC = () => {
